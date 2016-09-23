@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?scenebuilder-preview-i18n-resource ../bundle/base.properties?>
+<?scenebuilder-stylesheet ../css/standard.css?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.66" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.starterkit.javafx.controller.UserProfileEditController">
+  <Label layoutX="14.0" layoutY="14.0" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="474.0" styleClass="formTitle" text="%label.formEditTitle" />
+  <GridPane hgap="10.0" layoutX="14.0" layoutY="60.0" vgap="10.0">
+    <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="300.0" />
+    </columnConstraints>
+    <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <children>
+      <Label text="%label.userId" textOverrun="CLIP" />
+      <Label text="%label.firstName" GridPane.rowIndex="1" />
+      <Label text="%label.lastName" layoutX="10.0" layoutY="55.0"  GridPane.rowIndex="2" />
+      <Label text="%label.email" GridPane.rowIndex="3" />
+      <Label text="%label.password" GridPane.rowIndex="4" />
+      <TextField fx:id="userIdField" editable="false" focusTraversable="false" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+      <TextField fx:id="firstNameField" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <TextField fx:id="lastNameField" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <TextField fx:id="emailField" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <TextField fx:id="passwordField" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+    </children>
+  </GridPane>
+   <Button fx:id="saveButton" defaultButton="true" layoutX="375.0" layoutY="413.0" mnemonicParsing="false" onAction="#saveButtonAction" text="%button.save" />
+   <Button fx:id="cancelButton" cancelButton="true" layoutX="550.0" layoutY="413.0" mnemonicParsing="false" onAction="#cancelButtonAction" prefHeight="31.0" prefWidth="122.0" text="%button.cancel" />
+   <GridPane layoutX="14.0" layoutY="267.0" prefHeight="75.0" prefWidth="701.0">
+     <columnConstraints>
+       <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="171.0" minWidth="10.0" prefWidth="109.0" />
+       <ColumnConstraints hgrow="SOMETIMES" maxWidth="314.0" minWidth="10.0" prefWidth="298.0" />
+         <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="190.0" minWidth="10.0" prefWidth="100.0" />
+         <ColumnConstraints hgrow="SOMETIMES" maxWidth="190.0" minWidth="10.0" prefWidth="190.0" />
+     </columnConstraints>
+     <rowConstraints>
+       <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+     </rowConstraints>
+      <children>
+         <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" text="%label.aboutMe" textOverrun="CLIP" />
+         <TextArea fx:id="aboutMeArea" prefHeight="89.0" prefWidth="299.0" GridPane.columnIndex="1" />
+         <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" text="%label.motto" textAlignment="RIGHT" textOverrun="CLIP" GridPane.columnIndex="2" />
+         <TextArea fx:id="mottoArea" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" />
+      </children>
+   </GridPane>
+</AnchorPane>
