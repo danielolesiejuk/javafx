@@ -74,6 +74,7 @@ public class UserProfileSearchController {
 	@FXML
 	private TextField lastNameField;
 
+	// REV: zakomentowany kod
 	/*
 	@FXML
 	private ComboBox<Sex> sexField;
@@ -164,6 +165,7 @@ public class UserProfileSearchController {
 		 */
 		resultTable.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<UserProfileVO>() {
 
+			// REV: co robi ten listener?
 			@Override
 			public void changed(ObservableValue<? extends UserProfileVO> observable, UserProfileVO oldValue, UserProfileVO newValue) {
 				LOG.debug(newValue + " selected");
@@ -263,6 +265,7 @@ public class UserProfileSearchController {
 				resultTable.getSortOrder().clear();
 			}
 		};
+		// REV: brak obslugi bledów
 
 		/*
 		 * Start the background task. In real life projects some framework
@@ -278,6 +281,7 @@ public class UserProfileSearchController {
 
 		
 		UserProfileVO user = resultTable.getSelectionModel().getSelectedItem();
+		// REV: komunikacja z serwerem powinna odbywac sie w osobnym watku
 		dataProvider.deleteUser(user.getId());
 		searchButtonAction();
 	}
@@ -285,6 +289,7 @@ public class UserProfileSearchController {
 	@FXML
 	private void editButtonAction(ActionEvent event) throws Exception {
 		LOG.debug("'Edit' button clicked");
+		// REV: moznaby utworzyc okno w konstruktorze
 		Stage secondaryStage = new Stage();
 		
 		UserProfileVO user = resultTable.getSelectionModel().getSelectedItem();
@@ -321,9 +326,11 @@ public class UserProfileSearchController {
 		scene.getStylesheets().add(getClass().getResource("/com/starterkit/javafx/css/standard.css").toExternalForm());
 
 		secondaryStage.setScene(scene);
-
+		
+		// REV: okno powinno byc modalne
 		secondaryStage.show();
 		
+		// REV: event handler powinien byc zarejestrowany przed pokazaniem okna
 		secondaryStage.setOnHiding(new EventHandler<WindowEvent>() {
 			
 			@Override

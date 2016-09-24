@@ -21,6 +21,7 @@ public class UserProfileEdit {
 	private final StringProperty aboutMe = new SimpleStringProperty();
 	private final StringProperty lifeMotto = new SimpleStringProperty();
 	
+	// REV: nazwy metod poiwnny byc zgodne z nazwami pol
 	public final StringProperty userIdProperty() {
 		return this.login;
 	}

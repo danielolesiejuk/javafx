@@ -4,6 +4,7 @@
   <artifactId>javafx</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
+	<!-- REV: Spring Boot nie jest potrzebny -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>

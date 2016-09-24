@@ -189,7 +189,10 @@ public class UserProfileEditController {
 		updatedUser.setAboutMe(model.getAboutMe());
 		updatedUser.setLifeMotto(model.getMotto());
 				
+		// REV: komunikacja z serwerem powinna odbywac sie w osobnym watku
 		dataProvider.saveUser(updatedUser, userIndex);
+		
+		// REV: co jesli serwer zwroci blad?
 				
 		Stage stage = (Stage) saveButton.getScene().getWindow();
 	    stage.close();

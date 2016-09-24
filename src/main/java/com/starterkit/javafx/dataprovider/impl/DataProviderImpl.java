@@ -28,6 +28,7 @@ public class DataProviderImpl implements DataProvider {
 	 */
 	private static final long CALL_DELAY = 3000;
 
+	// REV: zakomentowany kod
 	//private Collection<UserProfileVO> users = new ArrayList<>();
 
 	public DataProviderImpl() {
@@ -50,8 +51,10 @@ public class DataProviderImpl implements DataProvider {
 
 		RestTemplate restTemplate = new RestTemplate();
 		
+		// REV: adres powinien byc pobrany z konfiguracji
 		UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl("http://localhost:8090/user/search");
 		 
+		// REV: nie trzeba porownywac do false
         if (login != null && login.isEmpty() == false) {
             builder.queryParam("login", login);
         }
@@ -72,6 +75,7 @@ public class DataProviderImpl implements DataProvider {
 		 * Simulate a call delay.
 		 */
 		try {
+			// REV: po co?
 			Thread.sleep(CALL_DELAY);
 		} catch (InterruptedException e) {
 			throw new RuntimeException("Thread interrupted", e);
@@ -98,6 +102,7 @@ public class DataProviderImpl implements DataProvider {
 		 * Simulate a call delay.
 		 */
 		try {
+			// REV: j.w.
 			Thread.sleep(CALL_DELAY);
 		} catch (InterruptedException e) {
 			throw new RuntimeException("Thread interrupted", e);
@@ -106,6 +111,7 @@ public class DataProviderImpl implements DataProvider {
 		
 		RestTemplate restTemplate = new RestTemplate();
 		
+		// REV: j.w.
 		UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl("http://localhost:8090/user/" + id);
 		
 		restTemplate.delete(builder.build().encode().toUri());
@@ -126,6 +132,7 @@ public class DataProviderImpl implements DataProvider {
 		 * Simulate a call delay.
 		 */
 		try {
+			// REV: j.w.
 			Thread.sleep(CALL_DELAY);
 		} catch (InterruptedException e) {
 			throw new RuntimeException("Thread interrupted", e);
@@ -136,6 +143,7 @@ public class DataProviderImpl implements DataProvider {
 		
 		RestTemplate restTemplate = new RestTemplate();
 		
+		// REV: j.w.
 		restTemplate.put("http://localhost:8090/user/", user);
 		
 		LOG.debug("Leaving editUser()");

@@ -24,7 +24,7 @@ public class UserProfileSearch {
 	private final ListProperty<UserProfileVO> result = new SimpleListProperty<>(
 			FXCollections.observableList(new ArrayList<>()));
 
-	
+	// REV: nazwy metod poiwnny byc zgodne z nazwami pol
 	public final StringProperty userIdProperty() {
 		return this.login;
 	}
